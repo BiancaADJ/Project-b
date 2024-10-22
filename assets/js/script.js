@@ -1,5 +1,5 @@
 // eventos
-window.addEventListener('scroll', () =>{
+window.addEventListener('scroll', () =>{ // barra de progresso
     const progresso = document.getElementById("progressbarr");
     const scrollTop = window.scrollY; // Quantidade rolada a partir do topo
     const docHeight = document.documentElement.scrollHeight - window.innerHeight; // Altura total do conteúdo menos a altura da janela visível
@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () =>{ // trocar imagens/icones de a
             imagens.src = `./assets/images/${key}-dark.png`; // troca imagens para modo escuro
         });
     }
-    let localizacao = navigator.geolocation.getCurrentPosition(showPosition)
 
     if(navigator.geolocation){ // geolocalização
         navigator.geolocation.getCurrentPosition(showPosition, showError);
