@@ -11,41 +11,80 @@ window.addEventListener('DOMContentLoaded', () =>{
 });
 
 const traducoes = {
-    pt:{ // traduções pt-x
+    pt: { // traduções pt-x
         texto1: "pt 1",
         texto2: "pt 2",
         texto3: "pt 3",
         texto4: "pt 4",
         texto5: "pt 5",
+
+        // modal-login
+        texto20: "Entrar",
+        texto21: "Entrar",
+
+        // placeholders
+        place1: "E-mail ou nome de usuário",
+        place2: "Senha",
     },
-    es:{ // -- es-x
+    es: { // -- es-x
         texto1: "es 1",
         texto2: "es 2",
         texto3: "es 3",
         texto4: "es 4",
         texto5: "es 5",
+
+        // modal-login
+        texto20: "Iniciar sesión",
+        texto21: "Ingresar",
+
+        // placeholders
+        place1: "Correo electrónico o nombre de usuario",
+        place2: "Contraseña",
     },
-    fr:{ // -- fr-x
+    fr: { // -- fr-x
         texto1: "fr 1",
         texto2: "fr 2",
         texto3: "fr 3",
         texto4: "fr 4",
         texto5: "fr 5",
+
+        // modal-login
+        texto20: "Connexion",
+        texto21: "Se connecter",
+
+        // placeholders
+        place1: "E-mail ou nom d'utilisateur",
+        place2: "Mot de passe",
     },
-    en:{ // -- en-x
+    en: { // -- en-x
         texto1: "en 1",
         texto2: "en 2",
         texto3: "en 3",
         texto4: "en 4",
         texto5: "en 5",
+
+        // modal-login
+        texto20: "Login",
+        texto21: "Sign In",
+
+        // placeholders
+        place1: "Email or username",
+        place2: "Password",
     }
 };
+
 
 function idioma(lang){
     // pega todos os elementos da mesma classe .txt (todos) textos
     const elementos = document.querySelectorAll(".txt");
+    const placeholders = document.querySelectorAll(".place");
 
-    elementos.forEach(elemento => {
+    placeholders.forEach(place =>{
+        const key = place.getAttribute('data-key');
+        place.placeholder = traducoes[lang][key];
+    })
+
+    elementos.forEach(elemento =>{
         const key = elemento.getAttribute('data-key'); // Pega o valor da data-key
         elemento.textContent = traducoes[lang][key]; // aplica as traduções
     });
