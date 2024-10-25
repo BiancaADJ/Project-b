@@ -21,6 +21,8 @@ const traducoes = {
         // modal-login
         texto20: "Entrar",
         texto21: "Entrar",
+        texto22: "Ver Senha",
+        texto23: "Esqueceu a Senha?",
 
         // placeholders
         place1: "E-mail ou nome de usuário",
@@ -36,6 +38,7 @@ const traducoes = {
         // modal-login
         texto20: "Iniciar sesión",
         texto21: "Ingresar",
+        texto22: "Ver Contraseña",
 
         // placeholders
         place1: "Correo electrónico o nombre de usuario",
@@ -51,6 +54,7 @@ const traducoes = {
         // modal-login
         texto20: "Connexion",
         texto21: "Se connecter",
+        texto22: "Voir le mot de passe",
 
         // placeholders
         place1: "E-mail ou nom d'utilisateur",
@@ -66,6 +70,7 @@ const traducoes = {
         // modal-login
         texto20: "Login",
         texto21: "Sign In",
+        texto22: "Show Password",
 
         // placeholders
         place1: "Email or username",

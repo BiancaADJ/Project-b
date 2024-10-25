@@ -13,12 +13,10 @@
     <!-- Links -->
     <link rel="stylesheet" href="./assets/css/reset.css"> <!-- Link do caminho para a página de reset do estilo do site -->
     <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link do caminho para a página do estilo do site -->
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/translate.js"></script>
     <!-- Nome -->
-    <title>Blizzr</title> <!-- Título -->
+    <title>Principal</title> <!-- Título -->
 </head>
-    <body>
+    <body class="main">
         <header>
             <section class="display-justify">
                 <div class="display-center">
@@ -38,7 +36,7 @@
         </header>
         <main>
             <!-- Parte 1 -->
-            <section class="prt1 display-justify" style="display: none;">
+            <section id="section_main" class="prt1 display-justify" style="display: flex;">
                 <div>
                     <h1>Título Principal</h1>
                     <p>Texto</p>
@@ -47,24 +45,36 @@
                     <img src="" alt="Imagem">
                 </div>
             </section>
-            <section class="modal-login" style="display: flex;">
-                <div class="login">
-                    <h2 class="txt" data-key="texto20">Entrar</h2>
-                    <div class="divisor"></div>
-                    <form class="display-column">
-                        <input class="place" data-key="place1" type="text" placeholder="E-mail ou nome de usuário">
-                        <input class="place" data-key="place2" type="text" placeholder="Senha">
-                        <input type="checkbox" name="" id="">
-                    </form>
-                    <button class="txt" data-key="texto21">Entrar</button>
-                </div>
-            </section>
-            <section class="modal-register" style="display: none;">
-                <div class="register">
 
+            <!-- Modal de login -->
+            <section id="main_modal_login" class="modal-login" style="display: none;">
+                <div class="modal-centro">
+                    <div class="login">
+                        <h2 class="txt" data-key="texto20">Entrar</h2>
+                        <div class="divisor"></div>
+                        <form class="display-column">
+                            <input class="place" data-key="place1" type="text" placeholder="E-mail ou nome de usuário">
+                            <input class="place" data-key="place2" type="password" placeholder="Senha" id="input-senha">
+                            <div class="display-justify">
+                                <div class="display-flex">
+                                    <input id="check-login" type="checkbox">
+                                    <h4 class="txt" data-key="texto22">Ver Senha</h4>
+                                </div>
+                                <div class="esqueceu-senha"><button onclick="cadastro(1)"><a class="txt" data-key="texto23">Esqueceu a Senha?</a></button></div>
+                            </div>
+                        </form>
+                        <button class="txt" data-key="texto21" onclick="login()">Entrar</button>
+                        <div class="sem-conta">
+                        </div>
+                    </div>
+                    <div class="nova-conta">
+                        <p>Ainda não tem uma conta?</p><button onclick="cadastro(2)">Cadastre-se</button>
+                    </div> 
                 </div>
             </section>
         </main>
         <footer></footer>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/translate.js"></script>
     </body>
 </html>

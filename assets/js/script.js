@@ -65,6 +65,37 @@ function select_button(number){
     console.log(`Botão ${number} ativado`)
 }
 
+let logar = false;
 function modal_login(){
 // depois
+    if(logar == true){
+        // passar para a página do usuário
+    }else{
+        // passar para a tela de login
+        document.getElementById("section_main").style.display = "none";
+        document.getElementById("main_modal_login").style.display = "flex";
+    }
+}
+
+let check_login = document.getElementById("check-login");
+check_login.addEventListener('change', () =>{
+    // Obtém o input de senha
+    let inputSenha = document.getElementById("input-senha");
+    
+    // Verifica o tipo do input
+    if (inputSenha.type === 'password') {
+        inputSenha.type = 'text'; // Exibe a senha
+    } else {
+        inputSenha.type = 'password'; // Oculta a senha
+    }
+});
+
+function cadastro(page){
+    // page = 1 {redefinir senha}
+
+    // page = 2 {novo usuário}
+}
+
+function login(){
+    // fazer login
 }

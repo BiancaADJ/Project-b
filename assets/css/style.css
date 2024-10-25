@@ -48,7 +48,15 @@
     border: 1px solid var(--red);
     border-radius: 10%;
 }
-
+.display-flex{
+    display: flex;
+    align-items: center;
+}
+.display-flex-end{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 .border-button-select{
     /* background-color: var(--red); */
     padding: 8px 13px;
@@ -98,10 +106,11 @@ header{
         top: 0px;
         right: 20px;
         width: 30%;
+        cursor: pointer;
     }
 }
 
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5, h6, h7, a, p{
     font-family: "Fredoka", sans-serif;
 }h1{ /* Título 1 */
     font-size: 40px;
@@ -109,8 +118,14 @@ h1, h2, h3, h4{
     font-size: 20px;
 }h3{ /* Pointer */
     cursor: pointer;
+    font-size: 15px;
 }h3:hover{
     color: var(--red);
+}h4{ /* Justificativa */
+    font-size: 15px;
+    color: var(--text-medium);
+}a{
+    font-size: 13px;
 }
 
 section.prt1{
@@ -125,7 +140,7 @@ section.prt1{
     }
 }
 
-section.modal-login, section.modal-register{
+section.modal-login, section.modal-register, section.modal-redefinir{
     position: fixed;
     z-index: 2;
     background-color: rgba(var(--preto-rgba), 0.5);
@@ -135,28 +150,56 @@ section.modal-login, section.modal-register{
     justify-content: center;
     align-items: center;
     text-align: center;
-    div.login, div.register{
-        background-color: var(--gray-0);
-        border: 1px solid var(--cores-3);
-        padding: 2%;
+    div.modal-centro{
+        width: 30%;
         border-top-left-radius: 20px;
         border-bottom-right-radius: 20px;
+        background-color: var(--gray-0);
+        border: 1px solid var(--cores-3);
+    }
+    div.login{
+        margin: 5%;
+        margin-top: 6%;
+    }
+    div.nova-conta{
+        margin-top: 0.5vh;
+        background-color: var(--gray-1);
+        border-bottom-right-radius: 20px;
+        padding: 3%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        p{
+            font-size: 13px;
+            margin-right: 10px;
+            color: var(--text-medium);
+        }
+        button{
+            width: 25%;
+            font-size: 12px;
+            background-color: var(--gray-0);
+            color: var(--cores-4);
+        }
     }
     h2{
         padding-bottom: 2vh;
     }
+    h4{
+        margin-left: 5px;
+    }
     form{
-        padding-block: 2vh;
+        padding-block: 3vh;
     }
     input{
         background-color: var(--gray-0);
 
     }
-    input[type="text"]{
+    input[type="text"], input[type="password"]{
         border: none;
         border-bottom: 1px solid var(--cores-0);
         padding-block: 15px 8px;
-        padding-inline: 10px 12vh;
+        padding-inline: 10px 20vh;
         margin-block: 10px;
         border-radius: 5px;
         box-shadow: 0px 0px 7px var(--gray-3) inset;
@@ -164,6 +207,30 @@ section.modal-login, section.modal-register{
     }
     input[type="checkbox"]{
         align-self: flex-start;
+        appearance: none;
+        background-color: var(--gray-0);
+        border: 1px solid var(--text-light);
+        width: 15px;
+        height: 15px;
+        border-radius: 2px;
+    }
+    input[type="checkbox"]:checked{
+        border: 1px solid var(--cores-3);
+        position: relative;
+    }
+    input[type="checkbox"]:checked::after{
+        position: absolute;
+        top: -10px;
+        left: 1px;
+        color: var(--text-light);
+        content: "✔";
+        font-size: 2.5vh;
+        color: var(--cores-5);
+    }
+    input:focus{
+        outline: none;
+        border-bottom: 1px solid var(--cores-5);
+        box-shadow: 0px 0px 5px var(--cores-5) inset;
     }
     div.divisor{
         height: 2px;
@@ -175,9 +242,28 @@ section.modal-login, section.modal-register{
             rgba(0, 0, 0, 0)
         );
     }
-
+    button{
+        cursor: pointer;
+        width: 100%;
+        height: 3vh;
+        font-size: 15px;
+        background: var(--cores-0);
+        border: 1px solid var(--cores-0);
+        color: var(--text-light);
+    }
+    button:hover{
+        outline: none;
+        background: var(--cores-1);
+    }
+    button[onclick="redefinir_senha()"]{
+        color: transparent;
+        border: none;
+        background: transparent;   
+    }
+    a{
+        color: var(--cores-4);
+    }
 }
-
 
 /* MODO CLARO / ESCURO */
 @media(prefers-color-scheme: light){
