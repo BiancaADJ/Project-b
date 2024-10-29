@@ -67,7 +67,7 @@ function select_button(number){
 
 let logar = false;
 function modal_login(){
-// depois
+    // depois
     if(logar == true){
         // passar para a página do usuário
     }else{
