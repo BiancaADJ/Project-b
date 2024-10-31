@@ -36,7 +36,7 @@
         </header>
         <main>
             <!-- Parte 1 -->
-            <section id="section_main" class="prt1 display-justify" style="display: none;">
+            <section id="section_main" class="prt1 display-justify" style="display: flex;">
                 <div>
                     <h1>Título Principal</h1>
                     <p>Texto</p>
@@ -47,15 +47,13 @@
             </section>
 
             <!-- Modal de login -->
-            <section id="main_modal_login" class="modal-login" style="display: flex;">
+            <section id="main_modal_login" class="modal-login" style="display: none;">
                 <div class="modal-centro">
                     <div class="login">
                         <h2 class="txt" data-key="texto20">Entrar</h2>
                         <div class="divisor"></div>
                         <form class="display-column">
-                            <div class="display-flex erro-senha" style="display: none;">
-                                <p>* Usuário e/ou Senha inválidos</p>
-                            </div>
+                            <p id="p_erro_senha" style="color: #f1ad44; font-size: 13px; align-self: flex-start; display: none;">* Usuário e/ou Senha inválidos</p>
                             <input id="bd_user" class="place" data-key="place1" type="text" placeholder="E-mail ou nome de usuário">
                             <input id="bd_password" class="place" data-key="place2" type="password" placeholder="Senha">
                             <div class="display-justify">

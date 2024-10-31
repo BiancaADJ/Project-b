@@ -117,14 +117,15 @@ function login(){
     fetch('http://localhost/project-b/lib/pesquisas.php',{ // lembrar de trocar quando o site colocar no ar
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ user: user, pass: pass }) // Enviando o nome de usuário e senha
+            body: JSON.stringify({action: 'login', user: user, pass: pass}) // Enviando o nome de usuário e senha
         })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
             console.log("Sucesso:", data.message);
-        } else {
+        }else{
             console.log("Falha:", data.message);
+            document.getElementById("p_erro_senha").style.display = "flex";
         }
     })
     .catch(error => console.error("Erro:", error));
