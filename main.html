@@ -36,7 +36,7 @@
         </header>
         <main>
             <!-- Parte 1 -->
-            <section id="section_main" class="prt1 display-justify" style="display: flex;">
+            <section id="section_main" class="prt1 display-justify" style="display: none;">
                 <div>
                     <h1>Título Principal</h1>
                     <p>Texto</p>
@@ -47,14 +47,17 @@
             </section>
 
             <!-- Modal de login -->
-            <section id="main_modal_login" class="modal-login" style="display: none;">
+            <section id="main_modal_login" class="modal-login" style="display: flex;">
                 <div class="modal-centro">
                     <div class="login">
                         <h2 class="txt" data-key="texto20">Entrar</h2>
                         <div class="divisor"></div>
                         <form class="display-column">
-                            <input class="place" data-key="place1" type="text" placeholder="E-mail ou nome de usuário">
-                            <input class="place" data-key="place2" type="password" placeholder="Senha" id="input-senha">
+                            <div class="display-flex erro-senha" style="display: none;">
+                                <p>* Usuário e/ou Senha inválidos</p>
+                            </div>
+                            <input id="bd_user" class="place" data-key="place1" type="text" placeholder="E-mail ou nome de usuário">
+                            <input id="bd_password" class="place" data-key="place2" type="password" placeholder="Senha">
                             <div class="display-justify">
                                 <div class="display-flex">
                                     <input id="check-login" type="checkbox">
@@ -72,6 +75,7 @@
                     </div> 
                 </div>
             </section>
+            
         </main>
         <footer></footer>
         <script src="./assets/js/script.js"></script>

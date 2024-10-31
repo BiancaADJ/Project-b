@@ -54,15 +54,23 @@ function showError(error){
     }
 }
 
-function select_button(number){
+function select_button(number) {
     let sessoes = document.querySelectorAll('.button-sessoes');
     let array = [...sessoes];
-    let i = 0;
-    while(i < 5){
-        array[i].classList.remove('border-button-select'); i++;
+
+    // Verifica se o botão já está selecionado
+    if (array[number].classList.contains('border-button-select')) {
+        array[number].classList.remove('border-button-select'); // Remove a seleção
+        console.log(`Botão ${number} desativado`);
+    } else {
+        // Remove a classe de todos os botões usando um loop for
+        for (let i = 0; i < array.length; i++) {
+            array[i].classList.remove('border-button-select');
+        }
+        // Adiciona a classe ao botão clicado
+        array[number].classList.add('border-button-select');
+        console.log(`Botão ${number} ativado`);
     }
-    array[number].classList.add('border-button-select');
-    console.log(`Botão ${number} ativado`)
 }
 
 let logar = false;
@@ -80,7 +88,7 @@ function modal_login(){
 let check_login = document.getElementById("check-login");
 check_login.addEventListener('change', () =>{
     // Obtém o input de senha
-    let inputSenha = document.getElementById("input-senha");
+    let inputSenha = document.getElementById("bd_password");
     
     // Verifica o tipo do input
     if (inputSenha.type === 'password') {
@@ -91,11 +99,34 @@ check_login.addEventListener('change', () =>{
 });
 
 function cadastro(page){
-    // page = 1 {redefinir senha}
-
-    // page = 2 {novo usuário}
+    if(page == 1){
+        // page = 1 {redefinir senha}
+        window.location.href = "../redef-senha.html";
+    }else{
+        // page = 2 {novo usuário}
+        window.location.href = "../cadastro.html";
+    }
 }
 
 function login(){
+    console.log("chamando função de Login")
     // fazer login
+    const user = document.getElementById("bd_user").value;
+    const pass = document.getElementById("bd_password").value;
+
+    fetch('http://localhost/project-b/lib/pesquisas.php',{ // lembrar de trocar quando o site colocar no ar
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ user: user, pass: pass }) // Enviando o nome de usuário e senha
+        })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log("Sucesso:", data.message);
+        } else {
+            console.log("Falha:", data.message);
+        }
+    })
+    .catch(error => console.error("Erro:", error));
+    console.log("Chegou no final da função de login")
 }

@@ -244,8 +244,8 @@ section.modal-login, section.modal-register, section.modal-redefinir{
     }
     button{
         cursor: pointer;
-        width: 100%;
-        height: 3vh;
+        /* width: 100%; */
+        height: 4vh;
         font-size: 15px;
         background: var(--cores-0);
         border: 1px solid var(--cores-0);
@@ -262,6 +262,12 @@ section.modal-login, section.modal-register, section.modal-redefinir{
     }
     a{
         color: var(--cores-4);
+    }
+    div.erro-senha{
+        p{
+            color: red;
+            font-size: 15px;
+        }
     }
 }
 

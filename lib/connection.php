@@ -1,7 +1,7 @@
 <?php
-$host = "sql102.byetcluster.com"; // MySQL Host Name
-$user = "if0_37568760"; // MySQL User Name
-$password = "Bia557087"; // Substitua "sua_senha_vPanel" pela senha do vPanel
+$host = "localhost"; // MySQL Host Name
+$user = "root"; // MySQL User Name
+$password = ""; // MySQL password
 $database = "if0_37568760_projectb"; // MySQL DB Name
 
 // Criando a conexão
