@@ -54,24 +54,23 @@ function showError(error){
     }
 }
 
-function select_button(number) {
+function select_button(number){
     let sessoes = document.querySelectorAll('.button-sessoes');
     let array = [...sessoes];
 
-    // Verifica se o botão já está selecionado
-    if (array[number].classList.contains('border-button-select')) {
-        array[number].classList.remove('border-button-select'); // Remove a seleção
-        console.log(`Botão ${number} desativado`);
-    } else {
-        // Remove a classe de todos os botões usando um loop for
-        for (let i = 0; i < array.length; i++) {
-            array[i].classList.remove('border-button-select');
-        }
-        // Adiciona a classe ao botão clicado
-        array[number].classList.add('border-button-select');
-        console.log(`Botão ${number} ativado`);
-    }
+    // Remove a classe de todos os botões para garantir que apenas um botão tenha a borda ativa
+    array.forEach(btn => btn.classList.remove('border-button-select'));
+
+    // Adiciona a classe ao botão sobre o qual o mouse passa
+    array[number].classList.add('border-button-select');
 }
+// Adiciona evento de 'mouseleave' para remover o estilo ao sair do botão
+document.querySelectorAll('.button-sessoes').forEach((button, index) => {
+    button.addEventListener('mouseleave', () => {
+        button.classList.remove('border-button-select');
+    });
+});
+
 
 let logar = false;
 function modal_login(){
@@ -123,6 +122,7 @@ function login(){
     .then(data => {
         if (data.success) {
             console.log("Sucesso:", data.message);
+            logado()
         }else{
             console.log("Falha:", data.message);
             document.getElementById("p_erro_senha").style.display = "flex";
@@ -130,4 +130,8 @@ function login(){
     })
     .catch(error => console.error("Erro:", error));
     console.log("Chegou no final da função de login")
+}
+
+function logado(){
+    // Após login => mudar foto de perfil, mudar tela dá pagina de usuário
 }

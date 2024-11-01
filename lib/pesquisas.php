@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     exit();
 }
 
-switch ($action) {
+switch ($action){
     case 'login':
         // Recebendo valores do JS
         $user = $data['user'] ?? ''; // Recupera o nome de usuário
