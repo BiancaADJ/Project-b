@@ -38,13 +38,35 @@ switch ($action){
         
         // Verifica se o usuário existe
         if ($result->num_rows > 0) {
-            echo json_encode(['success' => true, 'message' => 'Usuário encontrado.']);
+            $row = $result->fetch_assoc();
+            $id = $row['id']; // retorna o 'id' no data
+            echo json_encode(['success' => true, 'message' => 'Usuário encontrado.', 'id' => $id]);
         }else{
             echo json_encode(['success' => false, 'message' => 'Usuário não encontrado.']);
         }
         $query->close(); // Fecha a consulta
         break; // Adiciona o break aqui para evitar a execução do case default
 
+    case 'showPosition':
+        // recebendo valores
+        $posicao = $data['posicao'] ?? ''; // recupera localizacao
+        $id = $data['id'] ?? ''; // recupera ID local
+
+        // prepara a modificação
+        $query = $conn->prepare("UPDATE `usuarios` 
+        SET `localizacao` = ?
+        WHERE id = ?");
+        $query->bind_param("si", $posicao, $id);
+        $query->execute();
+
+        if($query->affected_rows > 0){ //verifica se alguma linha foi alterada
+            echo json_encode(['success' => true, 'message' => 'Modificação sucedida.']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Nenhuma alteração foi feita. Verifique o ID ou se o valor é igual ao atual.']);
+        }
+        $query->close();
+        break;
+        
     default:
         echo json_encode(['success' => false, 'message' => 'Ação não reconhecida.']);
 }

@@ -24,34 +24,68 @@ window.addEventListener('DOMContentLoaded', () =>{ // trocar imagens/icones de a
         });
     }
 
+});
+
+function geo_local(){
     if(navigator.geolocation){ // geolocalização
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     }else{
         console.log('Geolocalização não é suportada pelo seu navegador.');
     }
-});
+}
 
-function showPosition(position){
-    // Exibe a latitude e longitude
-    console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+function showPosition(position) {
+    console.log("Início da função de Localização");
+    // Configurando posição e ID
+    const posicao = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+    const id = localStorage.getItem('userId');
+
+    // Verificando se o ID está presente no localStorage
+    if (!id) {
+        console.error("Erro: ID do usuário não encontrado no localStorage.");
+        return;
+    }
+    // Enviando dados ao servidor
+    fetch('http://localhost/project-b/lib/pesquisas.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({action: 'showPosition', posicao: posicao, id: id})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log("Sucesso:", data.message);
+            console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+        } else {
+            console.log("Falha:", data.message);
+        }
+    })
+    .catch(error => console.error("Erro:", error));
+    console.log("Chegou no final da função de Localização");
 }
 
 function showError(error){
     // Lida com os erros de localização
+    const sem_posicao = "";
     switch(error.code) {
         case error.PERMISSION_DENIED: // lembrar de guardar no BD
             console.log("Usuário negou a solicitação de Geolocalização.");
+            sem_posicao = "Usuário negou a solicitação de Geolocalização."
             break;
         case error.POSITION_UNAVAILABLE:
             console.log("As informações de localização não estão disponíveis.");
+            sem_posicao = "As informações de localização não estão disponíveis."
             break;
         case error.TIMEOUT:
             console.log("A solicitação de obtenção de localização expirou.");
+            sem_posicao = "A solicitação de obtenção de localização expirou."
             break;
         case error.UNKNOWN_ERROR:
             console.log("Ocorreu um erro desconhecido.");
+            sem_posicao = "Ocorreu um erro desconhecido."
             break;
     }
+    
 }
 
 function select_button(number){
@@ -70,7 +104,6 @@ document.querySelectorAll('.button-sessoes').forEach((button, index) => {
         button.classList.remove('border-button-select');
     });
 });
-
 
 let logar = false;
 function modal_login(){
@@ -120,9 +153,12 @@ function login(){
         })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
-            console.log("Sucesso:", data.message);
-            logado()
+        if(data.success){
+            localStorage.removeItem('userId');
+            localStorage.setItem('userId', data.id); // Armazena o 'id' no localStorage
+            console.log('Usuário logado com sucesso. ID:', data.id);
+            geo_local()
+            // logado()
         }else{
             console.log("Falha:", data.message);
             document.getElementById("p_erro_senha").style.display = "flex";
