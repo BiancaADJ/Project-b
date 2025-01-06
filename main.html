@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <!-- Base -->
     <meta charset="UTF-8">
@@ -9,75 +10,85 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@100.5,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@100.5,300..700&display=swap"
+        rel="stylesheet">
     <!-- Links -->
-    <link rel="stylesheet" href="./assets/css/reset.css"> <!-- Link do caminho para a página de reset do estilo do site -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- Link do caminho para a página de reset do estilo do site -->
     <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link do caminho para a página do estilo do site -->
     <!-- Nome -->
     <title>Principal</title> <!-- Título -->
 </head>
-    <body class="main">
-        <header>
-            <section class="display-justify">
-                <div class="display-center">
-                    <img id="img_login" class="image" data-key="flaticon/login" src="./assets/images/flaticon/login-dark.png" alt="Botão de Login" onclick="modal_login()">
-                    <h2>Nome</h2>
-                </div>
-                <div class="sessoes display-center">
-                    <img id="bandeira" class="border-color-img" src="./assets/images/flaticon/pt_lang.png" alt="Idioma">
-                    <h3 class="txt button-sessoes" data-key="texto1" onmouseenter="select_button(0)">pt 1</h3>
-                    <h3 class="txt button-sessoes" data-key="texto2" onmouseenter="select_button(1)">pt 2</h3>
-                    <h3 class="txt button-sessoes" data-key="texto3" onmouseenter="select_button(2)">pt 3</h3>
-                    <h3 class="txt button-sessoes" data-key="texto4" onmouseenter="select_button(3)">pt 4</h3>
-                    <h3 class="txt button-sessoes" data-key="texto5" onmouseenter="select_button(4)">pt 5</h3>
-                </div>
-            </section>
-            <div id="progressbarr" class="progressbarr" style="width: 0%;"></div>
-        </header>
-        <main class="main">
-            <!-- Parte 1 -->
-            <section id="section_main" class="prt1 display-justify" style="display: flex;">
-                <div>
-                    <h1>Título Principal</h1>
-                    <p>Texto</p>
-                </div>
-                <div>
-                    <img src="" alt="Imagem">
-                </div>
-            </section>
 
-            <!-- Modal de login -->
-            <section id="main_modal_login" class="modal-login" style="display: none;">
-                <div class="modal-centro">
-                    <div class="login">
-                        <h2 class="txt" data-key="texto20">Entrar</h2>
-                        <div class="divisor"></div>
-                        <form class="display-column">
-                            <p id="p_erro_senha" style="color: #f1ad44; font-size: 13px; align-self: flex-start; display: none;">* Usuário e/ou Senha inválidos</p>
-                            <input id="bd_user" class="place" data-key="place1" type="text" placeholder="E-mail ou nome de usuário">
-                            <input id="bd_password" class="place" data-key="place2" type="password" placeholder="Senha">
-                            <div class="display-justify">
-                                <div class="display-flex">
-                                    <input id="check-login" type="checkbox">
-                                    <h4 class="txt" data-key="texto22">Ver Senha</h4>
-                                </div>
-                                <div class="esqueceu-senha"><button onclick="cadastro(1)"><a class="txt" data-key="texto23">Esqueceu a Senha?</a></button></div>
+<body class="main">
+    <header>
+        <section class="display-justify">
+            <div class="display-center">
+                <img id="img_login" class="image" data-key="flaticon/login"
+                    src="./assets/images/flaticon/login-dark.png" alt="Botão de Login" onclick="modal_login()">
+                <h2>Nome</h2>
+            </div>
+            <div class="sessoes display-center">
+                <h3 class="txt button-sessoes" data-key="texto1" onmouseenter="select_button(0)">Sobre</h3>
+                <h3 class="txt button-sessoes" data-key="texto2" onmouseenter="select_button(1)">Experiência</h3>
+                <h3 class="txt button-sessoes" data-key="texto3" onmouseenter="select_button(2)">Trabalhos</h3>
+                <h3 class="txt button-sessoes" data-key="texto4" onmouseenter="select_button(3)">Contatos</h3>
+                <h3 class="txt button-sessoes" data-key="texto5" onmouseenter="select_button(4)">Project B</h3>
+                <img id="bandeira" class="border-color-img" src="./assets/images/flaticon/pt_lang.png" alt="Idioma">
+            </div>
+        </section>
+        <div id="progressbarr" class="progressbarr" style="width: 0%;"></div>
+    </header>
+    <main class="main">
+        <!-- Parte 1 -->
+        <section id="section_main" class="prt1 display-justify" style="display: flex;">
+            <div>
+                <h1>Título Principal</h1>
+                <p>Texto</p>
+            </div>
+            <div>
+                <img src="" alt="Imagem">
+            </div>
+        </section>
+
+        <!-- Modal de login -->
+        <section id="main_modal_login" class="modal-login" style="display: none;">
+            <div class="modal-centro">
+                <div class="login">
+                    <h2 class="txt" data-key="texto20">Entrar</h2>
+                    <div class="divisor"></div>
+                    <form class="display-column">
+                        <p id="p_erro_senha"
+                            style="color: #f1ad44; font-size: 13px; align-self: flex-start; display: none;">* Usuário
+                            e/ou Senha inválidos</p>
+                        <input id="bd_user" class="place" data-key="place1" type="text"
+                            placeholder="E-mail ou nome de usuário">
+                        <input id="bd_password" class="place" data-key="place2" type="password" placeholder="Senha">
+                        <div class="display-justify">
+                            <div class="display-flex">
+                                <input id="check-login" type="checkbox">
+                                <h4 class="txt" data-key="texto22">Ver Senha</h4>
                             </div>
-                        </form>
-                        <button class="txt" data-key="texto21" onclick="login()">Entrar</button>
-                        <div class="sem-conta">
+                            <div class="esqueceu-senha"><button onclick="cadastro(1)"><a class="txt"
+                                        data-key="texto23">Esqueceu a Senha?</a></button></div>
                         </div>
+                    </form>
+                    <button class="txt" data-key="texto21" onclick="login()">Entrar</button>
+                    <div class="sem-conta">
                     </div>
-                    <div class="nova-conta">
-                        <p>Ainda não tem uma conta?</p><button onclick="cadastro(2)">Cadastre-se</button>
-                    </div> 
                 </div>
-            </section>
-            
-        </main>
-        <footer></footer>
-        <script src="./assets/js/script.js"></script>
-        <script src="./assets/js/translate.js"></script>
-    </body>
+                <div class="nova-conta">
+                    <p>Ainda não tem uma conta?</p><button onclick="cadastro(2)">Cadastre-se</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer></footer>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/translate.js"></script>
+</body>
+
 </html>

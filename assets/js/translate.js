@@ -12,10 +12,10 @@ window.addEventListener('DOMContentLoaded', () =>{
 
 const traducoes = {
     pt: { // traduções pt-x
-        texto1: "pt 1",
-        texto2: "pt 2",
-        texto3: "pt 3",
-        texto4: "pt 4",
+        texto1: "Sobre",
+        texto2: "Experiência",
+        texto3: "Trabalhos",
+        texto4: "Contatos",
         texto5: "pt 5",
 
         // modal-login
