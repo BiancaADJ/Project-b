@@ -75,6 +75,9 @@ html, body{
       to right,
       var(--cores-0),
       var(--gray-0)
+    to right,
+    var(--cores-0),
+    var(--gray-0)
   );
   color: var(--text-light);
 }
@@ -88,6 +91,8 @@ header{
   section{    
       margin-inline: 5%;
       margin-top: 1%;
+    margin-inline: 5%;
+    margin-top: 1%;
   }
   div.sessoes{
       align-items: center;
@@ -95,11 +100,19 @@ header{
       img{
           width: 40px;
       }
+    align-items: center;
+    gap: 5vh;
+    img{
+      width: 40px;
+    }
   }
   div.progressbarr{
       background-color: var(--cores-5);
       height: 3px;
       margin-top: 15px;
+    background-color: var(--cores-5);
+    height: 3px;
+    margin-top: 15px;
   }
   img#img_login{
       position: relative;
@@ -107,6 +120,11 @@ header{
       right: 20px;
       width: 30%;
       cursor: pointer;
+    position: relative;
+    top: 0px;
+    right: 20px;
+    width: 30%;
+    cursor: pointer;
   }
 }
 
@@ -137,6 +155,11 @@ section.prt1{
       p{
           padding: 15vh 30vh;
       }
+    text-align: center;
+    margin: 2% 5%;
+    p{
+      padding: 15vh 30vh;
+    }
   }
 }
 
@@ -156,10 +179,17 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       border-bottom-right-radius: 20px;
       background-color: var(--gray-0);
       border: 1px solid var(--cores-3);
+    width: 30%;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: var(--gray-0);
+    border: 1px solid var(--cores-3);
   }
   div.login{
       margin: 5%;
       margin-top: 6%;
+    margin: 5%;
+    margin-top: 6%;
   }
   div.nova-conta{
       margin-top: 0.5vh;
@@ -181,18 +211,41 @@ section.modal-login, section.modal-register, section.modal-redefinir{
           background-color: var(--gray-0);
           color: var(--cores-4);
       }
+    margin-top: 0.5vh;
+    background-color: var(--gray-1);
+    border-bottom-right-radius: 20px;
+    padding: 3%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    p{
+      font-size: 13px;
+      margin-right: 10px;
+      color: var(--text-medium);
+    }
+    button{
+      width: 25%;
+      font-size: 12px;
+      background-color: var(--gray-0);
+      color: var(--cores-4);
+    }
   }
   h2{
       padding-bottom: 2vh;
+    padding-bottom: 2vh;
   }
   h4{
       margin-left: 5px;
+    margin-left: 5px;
   }
   form{
       padding-block: 3vh;
+    padding-block: 3vh;
   }
   input{
       background-color: var(--gray-0);
+    background-color: var(--gray-0);
   }
   input[type="text"], input[type="password"]{
       border: none;
@@ -204,6 +257,15 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       border-radius: 5px;
       box-shadow: 0px 0px 7px var(--gray-3) inset;
       color: var(--text-medium);
+    border: none;
+    border-bottom: 1px solid var(--cores-0);
+    padding-block: 15px 8px;
+    /* padding-inline: 10px 20vh; */
+    padding-left: 20px;
+    margin-block: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px var(--gray-3) inset;
+    color: var(--text-medium);
   }
   input[type="checkbox"]{
       align-self: flex-start;
@@ -213,10 +275,19 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       width: 15px;
       height: 15px;
       border-radius: 2px;
+    align-self: flex-start;
+    appearance: none;
+    background-color: var(--gray-0);
+    border: 1px solid var(--text-light);
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
   }
   input[type="checkbox"]:checked{
       border: 1px solid var(--cores-3);
       position: relative;
+    border: 1px solid var(--cores-3);
+    position: relative;
   }
   input[type="checkbox"]:checked::after{
       position: absolute;
@@ -226,11 +297,21 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       content: "✔";
       font-size: 2.5vh;
       color: var(--cores-5);
+    position: absolute;
+    top: -10px;
+    left: 1px;
+    color: var(--text-light);
+    content: "✔";
+    font-size: 2.5vh;
+    color: var(--cores-5);
   }
   input:focus{
       outline: none;
       border-bottom: 1px solid var(--cores-5);
       box-shadow: 0px 0px 5px var(--cores-5) inset;
+    outline: none;
+    border-bottom: 1px solid var(--cores-5);
+    box-shadow: 0px 0px 5px var(--cores-5) inset;
   }
   div.divisor{
       height: 2px;
@@ -241,6 +322,14 @@ section.modal-login, section.modal-register, section.modal-redefinir{
           rgba(var(--cores-rgba-5), 0.8),
           rgba(0, 0, 0, 0)
       );
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(
+      to right, 
+      rgba(0, 0, 0, 0), 
+      rgba(var(--cores-rgba-5), 0.8),
+      rgba(0, 0, 0, 0)
+    );
   }
   button{
       cursor: pointer;
@@ -250,18 +339,31 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       background: var(--cores-0);
       border: 1px solid var(--cores-0);
       color: var(--text-light);
+    cursor: pointer;
+    width: 100%;
+    height: 3vh;
+    font-size: 15px;
+    background: var(--cores-0);
+    border: 1px solid var(--cores-0);
+    color: var(--text-light);
   }
   button:hover{
       outline: none;
       background: var(--cores-1);
+    outline: none;
+    background: var(--cores-1);
   }
   button[onclick="redefinir_senha()"]{
       color: transparent;
       border: none;
       background: transparent;   
+    color: transparent;
+    border: none;
+    background: transparent;   
   }
   a{
       color: var(--cores-4);
+    color: var(--cores-4);
   }
 }
 
@@ -278,6 +380,16 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       --gray-3: #999999; 
       --gray-4: #666666; 
       --gray-5: #4d4d4d;
+    --text-light: #1a1a1a; /* Título */
+    --text-medium: #333333; /* Corpo*/
+    --text-dark: #4d4d4d; /* Sub-texto */
+
+    --gray-0: #f0f0f0;
+    --gray-1: #cccccc;
+    --gray-2: #b3b3b3; 
+    --gray-3: #999999; 
+    --gray-4: #666666; 
+    --gray-5: #4d4d4d;
 
       --cores-0: #47ffcf;
       --cores-1: #00e0a6;
@@ -285,8 +397,24 @@ section.modal-login, section.modal-register, section.modal-redefinir{
       --cores-3: #008a66;
       --cores-4: #00523c;
       --cores-5: #002e22;
+    --cores-0: #47ffcf;
+    --cores-1: #00e0a6;
+    --cores-2: #00ad80;
+    --cores-3: #008a66;
+    --cores-4: #00523c;
+    --cores-5: #002e22;
 
       --cores-rgba-5: 0, 18.04, 13.33;
       --preto-rgba: 100, 100, 100;
+    --cores-rgba-5: 0, 18.04, 13.33;
+    --preto-rgba: 100, 100, 100;
   }
+}
+
+@media(max-width: 768px){
+  /* Telas do tamanho do tablet*/
+}
+
+@media(max-width: 480px){
+  /* Telas de celular */
 }
